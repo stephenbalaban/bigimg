@@ -12,6 +12,11 @@ canvas, and an output file. If your function returns a single floating point
 value, the resulting image will be gray scale, if it returns a 3-tuple, it will
 be color.
 
+## Installation
+
+    $ git clone https://github.com/stephenbalaban/bigimg.git
+    $ cd bigimg
+    $ sudo pip install -e .
 
 You can also create pseudorandom images with:
 
