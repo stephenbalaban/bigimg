@@ -1,12 +1,16 @@
 bigimg
 ======
 
-Easily create big images..
+Easily create big images. With just a lambda expression. 
+
+An image can be seen as a function that maps a real-valued (x, y) coordinate
+onto a color. With this in mind, I made bigimg.
 
 ```bigimg.py``` allows you to define a canvas width and height, a vector
 function which will conduct an element wise map over each element in the
-canvas. If your function returns a single floating point value, the resulting
-image will be gray scale, if it returns a 3-tuple, it will be color.
+canvas, and an output file. If your function returns a single floating point
+value, the resulting image will be gray scale, if it returns a 3-tuple, it will
+be color.
 
 
 You can also create pseudorandom images with:
@@ -14,7 +18,6 @@ You can also create pseudorandom images with:
 ```bash
 ./bigimg 128 128 random pseudorandom.png
 ```
-
 
 This is useful in a variety of contexts.
 
