@@ -25,6 +25,6 @@ setup(
         'scipy',
         'numpy',
         ],
-    description="",
+    description="bigimg lets you generate big images with just a lambda expression.",
     long_description=open('README.md').read(),
 )
