@@ -22,6 +22,7 @@ import scipy.misc
 import math
 import random
 import string
+np = numpy
 
 def cleanfn(fname):
     valid = string.ascii_lowercase + string.ascii_uppercase + \
@@ -30,11 +31,11 @@ def cleanfn(fname):
 
 
 def make_image(width, height, function, outfilepng, verbose=False):
-    imat = numpy.fromfunction(function, (width, height), dtype=float)
+    imat = np.fromfunction(function, (width, height), dtype=float)
     if verbose:
         print(imat)
-    img = scipy.misc.toimage(imat, high=numpy.max(imat),
-                             low=numpy.min(imat))
+    img = scipy.misc.toimage(imat, high=np.max(imat),
+                             low=np.min(imat))
     img.save(outfilepng)
     return imat
 
@@ -63,9 +64,9 @@ def lossless_random(w, h, fs, o):
     """
     w = int(w)
     h = int(h)
-    a = numpy.random.uniform(0, 2**16 - 1, (w, h)).astype('int32')
-    img = scipy.misc.toimage(a, high=numpy.max(a),
-                             low=numpy.min(a), mode='I')
+    a = np.random.uniform(0, 2**16 - 1, (w, h)).astype('int32')
+    img = scipy.misc.toimage(a, high=np.max(a),
+                             low=np.min(a), mode='I')
     img.save(o)
 
 
