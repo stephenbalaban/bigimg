@@ -17,12 +17,14 @@
 
 """
 import sys
-import numpy as np
-numpy = np
+import numpy
 import scipy.misc
 import math
 import random
 import string
+
+
+np = numpy
 
 
 def cleanfn(fname):
