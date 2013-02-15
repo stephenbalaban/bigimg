@@ -5,8 +5,8 @@
     ~~~~~~~~~
 
     Script for generating large images. 
-    
-    ./bigimg.py 64 64 "lambda x, y: 64 * np.sin(x) + 64 * np.sin outfile.png
+
+    See README.md for examples.
 
     Created: 2013-02-13 20:08:26 -0800
     Copyright (c) 2013, Stephen A. Balaban <stephen@stephenbalaban.com>
@@ -38,13 +38,15 @@ def make_image(width, height, function, outfilepng):
     return imat
 
 
-def main(w, h, fs, o):
+def main(w, h, fs, o, gen_name=False):
     f = eval(fs)
     w = int(w)
     h = int(h)
     print("# Making matrix image of size (%s, %s) with %s mapped elementwise."
-            % (w, h, f))
-    o = "%s_out.png" % cleanfn(fs)
+            % (w, h, fs))
+    # generate a name using a hash of the function
+    if gen_name:
+        o = "%s_out.png" % cleanfn(fs)
     make_image(w, h, f, o)
 
 
@@ -56,9 +58,7 @@ def lossless_random(w, h, fs, o):
     img.save(o)
 
 
-
 if __name__ == '__main__':
-    print("Namespace: math.*, np.*. i.e. lambda x, y: np.sin(x) * np.sin(y)")
     w, h, fs, o = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
     if fs == 'random':
         lossless_random(w,h,fs,o)
@@ -68,5 +68,5 @@ if __name__ == '__main__':
             pass
         except Exception as e:
             print("Exception: %s" % e)
-            print("Usage: ./bigimg.py w h f(dyadic lambda expression) "
-                + "outfile.png")
+            print("Usage: ./bigimg.py w h f(dyadic lambda expression)"
+                + " outfile.png")
