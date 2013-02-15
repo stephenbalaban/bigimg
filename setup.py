@@ -22,7 +22,7 @@ setup(
     scripts=['scripts/bigimg'],
     license='LICENSE',
     install_requires=[
-        'scipy',
+        'scipy >= 0.9.0',
         'numpy',
         ],
     description="",
