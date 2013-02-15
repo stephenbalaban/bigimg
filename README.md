@@ -39,6 +39,11 @@ Only the best images, as determined by me, will be accepted.
 ```
 ![Example 2](examples/2.png "lambda x, y: y * np.cos(x/128.)")
 
+```
+./bigimg.py 512 512 random examples/0.png
+```
+![Example 0](examples/0.png "random")
+
 ### Color
 
 ```
