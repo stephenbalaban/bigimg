@@ -16,7 +16,7 @@ be color.
 You can also create pseudorandom images with:
 
 ```bash
-./bigimg 128 128 random pseudorandom.png
+./bigimg 128 128 pseudorandom.png --lamdbda random
 ```
 
 This is useful in a variety of contexts.
@@ -33,12 +33,12 @@ Only the best images, as determined by me, will be accepted.
 ### Grayscale
 
 ```
-./bigimg.py 512 512 "lambda x, y: 2048. * np.sin(x/32.) + 2048. * np.sin(y/32.)" examples/1.png
+./bigimg.py 512 512 examples/1.png --lambda "lambda x, y: 2048. * np.sin(x/32.) + 2048. * np.sin(y/32.)"
 ```
 ![Example 1](examples/1.png "lambda x, y: 2048. * np.sin(x/32.) + 2048. * np.sin(y/32.)" )
 
 ```
-./bigimg.py 512 512 "lambda x, y: y * np.cos(x/128.)" examples/2.png
+./bigimg.py 512 512 examples/2.png --lambda "lambda x, y: y * np.cos(x/128.)"
 ```
 ![Example 2](examples/2.png "lambda x, y: y * np.cos(x/128.)")
 
@@ -50,17 +50,17 @@ Only the best images, as determined by me, will be accepted.
 ### Color
 
 ```
-./bigimg.py 512 512 "lambda x, y: (x, x, y)" examples/3.png
+./bigimg.py 512 512 examples/3.png --lambda "lambda x, y: (x, x, y)"
 ```
 ![Example 3](examples/3.png "lambda x, y: (x, x, y)")
 
 ```
-./bigimg.py 512 512 "lambda x, y: (x, np.sin(x), np.sin(y))" examples/4.png
+./bigimg.py 512 512 examples/4.png --lambda "lambda x, y: (x, np.sin(x), np.sin(y))"
 ```
 ![Example 4](examples/4.png "lambda x, y: (x, np.sin(x), np.sin(y))")
 
 ```
-./bigimg.py 1024 1024 "lambda x, y: (512 * np.cos(y/32.), 512 * np.sin(x/32.), 512 * np.sin(y/32.))" examples/5.png
+./bigimg.py 1024 1024 examples/5.png --lambda "lambda x, y: (512 * np.cos(y/32.), 512 * np.sin(x/32.), 512 * np.sin(y/32.))"
 ```
 ![Example 5](examples/5.png "lambda x, y: (512 * np.cos(y/32.), 512 * np.sin(x/32.), 512 * np.sin(y/32.))")
 
