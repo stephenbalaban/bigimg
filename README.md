@@ -21,7 +21,7 @@ be color.
 You can also create pseudorandom images with:
 
 ```bash
-./bigimg 128 128 pseudorandom.png --lamdbda random
+./bigimg 128 128 pseudorandom.png --lambda random
 ```
 
 This is useful in a variety of contexts.
