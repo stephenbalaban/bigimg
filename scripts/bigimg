@@ -21,6 +21,3 @@ if __name__ == "__main__":
             lossless_random(args.w, args.h, args.fs, args.o)
         else:
             main(args.w, args.h, args.fs, args.o)
-            raise Exception("Usage: ./bigimg.py w h " \
-                                "f(dyadic lambda expression) outfile.png")
-
